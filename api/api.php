@@ -14,7 +14,7 @@ setlocale(LC_CTYPE, "C.UTF-8");
 $command = $_POST['command'];
 $filebody = $_POST['filebody'];
 
-$tmpfile = "./lib/tempfile." . $_POST['fileextension'];
+$tmpfile = "./tmp/tempfile." . $_POST['fileextension'];
 $fp = fopen($tmpfile, "w");
 fwrite($fp, $filebody);
 fclose($fp);
@@ -43,7 +43,7 @@ $cmd = '/home/hiroto/.opam/default/bin/lambdapi ' . $command . $option . $tmpfil
 
 echo '<font color=\"green\">&gt; ' . $cmd . '</font><br>';
 exec($cmd, $output, $result_code); //実行
-exec('rm ./lib/tempfile.lp ./lib/tempfile.dk');
+exec('rm ./tmp/tempfile.lp ./tmp/tempfile.dk');
 
 //表示
 printOutput($output);

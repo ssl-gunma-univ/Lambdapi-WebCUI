@@ -12,17 +12,17 @@ if ($_POST['path'] == null) {
     array(
       'name' => 'filebody',
       'display' => 'lib',
-      'dir' => './lib'
+      'dir' => '/var/www/html/webcui/lambdapi-examples'
     ),
     array(
       'name' => 'filebody',
       'display' => 'OK',
-      'dir' => './tests/OK'
+      'dir' => '/var/www/html/webcui/dedukti-examples/OK'
     ),
     array(
       'name' => 'filebody',
       'display' => 'KO',
-      'dir' => './tests/KO'
+      'dir' => '/var/www/html/webcui/dedukti-examples/KO'
     )
   );
 
