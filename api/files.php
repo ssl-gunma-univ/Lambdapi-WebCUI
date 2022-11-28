@@ -27,7 +27,7 @@ if ($_POST['path'] == null) {
   );
 
   function getFiles($arr) {
-    $arr['files'] = glob($arr['dir'] . '/*');
+    $arr['files'] = glob($arr['dir'] . '/*.lp') + glob($arr['dir'] . '/*.dk');
     return $arr;
   }
 
