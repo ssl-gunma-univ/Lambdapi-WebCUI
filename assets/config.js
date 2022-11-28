@@ -5,7 +5,8 @@ export const config = {
 
   address: '/webcui/lambdapi',      // http://localhost:3000/[address]
 
-  webApiUrl: `http://solweb.mydns.jp/webcui/lambdapi/api/api.php`,//`http://localhost:80/webcui/lambdapi/api/api.php`, //
+  webApiUrl: //`http://solweb.mydns.jp/webcui/lambdapi/api/api.php`,
+             `http://localhost:80/webcui/lambdapi/api/api.php`,
 
   consoleLocation: 'right',    // Placing the console. [left | right | top | bottom]
   toolbarLocation: 'left',    // Placing the toolbar. [left | right]
@@ -38,7 +39,8 @@ export const config = {
       enable: true,
       icon: 'mdi-file-multiple',
       text: 'Examples',
-      webApiUrl: 'http://solweb.mydns.jp/webcui/lambdapi/api/files.php',//'http://localhost:80/webcui/lambdapi/api/files.php', //
+      webApiUrl: //'http://solweb.mydns.jp/webcui/lambdapi/api/files.php',
+                 'http://localhost:80/webcui/lambdapi/api/files.php',
     },
     variables: {
       enable: false,
