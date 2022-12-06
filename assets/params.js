@@ -4,7 +4,7 @@ export const params = {
     type: 'file',
     target: 'filebody',
     default: [],
-    size: 'whole'
+    size: 4
   },
   fileextension: {
     display: 'file extension',
@@ -14,7 +14,7 @@ export const params = {
       { name: 'dk', display: 'dk' }
     ],
     default: { name: 'lp', display: 'lp' },
-    size: 'whole'
+    size: 4
   },
   //command
   command: {
@@ -29,7 +29,7 @@ export const params = {
       { name: 'version',   display: 'version' }
     ],
     default: { name: 'check', display: 'check' },
-    size: 'whole'
+    size: 4
   },
   //common option
   help:        { display: '--help',         type: 'check',  default: false,  size: 'half' },
