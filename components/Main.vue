@@ -141,6 +141,20 @@
                     dense
                     :disabled="param.hasOwnProperty('if') && !isFlag(param.if)"
                   ></v-file-input>
+                  <v-alert
+                    v-if="param.type === 'filename'"
+                  >
+                    {{filename}}
+                  </v-alert>
+                  <v-text-field
+                    v-if="param.type === 'filename2'"
+                    :label="param.display"
+                    :value="param.value"
+                    readonly
+                    spellcheck="false"
+                    hide-details
+                    :disabled="param.hasOwnProperty('if') && !isFlag(param.if)"
+                  ></v-text-field>
                 </v-col>
               </v-row>
             </v-list-item-content>
