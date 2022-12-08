@@ -38,7 +38,12 @@
                       parseInt(param.size) : 12
                   "
                   cols="12"
-                  :class="param.hasOwnProperty('type') ? 'py-0' : 'pa-0'"
+                  :class="{
+                    'py-0' : param.hasOwnProperty('type'),
+                    'pa-0' : !param.hasOwnProperty('type'),
+                    'py-2' : param.type === 'textarea',
+                    'py-1' : param.type === 'file'
+                  }"
                 >
                   <v-text-field
                     v-if="param.type === 'text'"
@@ -195,7 +200,7 @@ export default {
     consoleHeight: 0
   }),
   computed: {
-    ...mapState(['params', 'console']),
+    ...mapState(['params', 'console', 'filename']), //filename
     ...mapGetters(['isFlag'])
   },
   watch: {
@@ -208,7 +213,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['updateParam']),
+    ...mapMutations(['updateParam', 'setFilename']), //setFilename
     ...mapActions(['displayExceptionMsg']),
     fileChange(param, key, value) {
       const reader = new FileReader()
