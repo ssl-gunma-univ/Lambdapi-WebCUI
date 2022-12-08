@@ -39,7 +39,7 @@ export const params = {
   //decision-tree option
   ghost:  { display: '--ghost', type: 'check',  default: false,  size: 'whole', if: 'tree' },
   
-  filebody:{
+  filebody: {
     display: 'file body',
     type: 'textarea',
     rows: 20,
