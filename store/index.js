@@ -34,7 +34,8 @@ export const state = () => ({
   history: [],
   files: [],
   variables: variables,
-  waiting: false
+  waiting: false,
+  filename: '' //仮
 })
 
 export const mutations = {
@@ -137,6 +138,11 @@ export const mutations = {
 
   setWaiting(state, bool) {
     state.waiting = bool
+  },
+
+  //仮
+  setFilename(state, filename){
+    state.filename = filename
   }
 }
 
