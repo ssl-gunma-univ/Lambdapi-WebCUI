@@ -29,9 +29,9 @@
             v-for="(path, index) in file.files"
             :key="index"
             @click.stop="
-              setFileData(file.name, path);
+              setFileData(file, path);
               closeDrawers();
-            "
+              "
           >
             <v-list-item-title>
               <v-alert
@@ -82,7 +82,7 @@ export default {
     ...mapMutations(["updateParam", "openDrawer", "closeDrawers"]),
     ...mapActions(['displayConnectionErrorMsg']),
 
-    setFileData(name, path) {
+    setFileData(file, path) {
       let request = new URLSearchParams()
       request.append('path', path)
 
@@ -92,7 +92,7 @@ export default {
       .post(this.config.features.files.webApiUrl, request)
       .then(function (response) {
         let result = response.data
-        vue.updateParam({ key: name, value: { value: result } })
+        vue.updateParam({ key: file.name, value: { value: result , display: fname} })
       })
       .catch(function (err) {
         vue.displayConnectionErrorMsg()
