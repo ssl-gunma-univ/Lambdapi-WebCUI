@@ -31,6 +31,7 @@
             @click.stop="
               setFileData(file, path);
               closeDrawers();
+              setFilename(path.replace(file.dir + '/', ''));
               "
           >
             <v-list-item-title>
@@ -79,7 +80,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(["updateParam", "openDrawer", "closeDrawers"]),
+    ...mapMutations(["updateParam", "openDrawer", "closeDrawers", "setFilename"]),
     ...mapActions(['displayConnectionErrorMsg']),
 
     setFileData(file, path) {
@@ -92,7 +93,9 @@ export default {
       .post(this.config.features.files.webApiUrl, request)
       .then(function (response) {
         let result = response.data
+        let fname = path.replace(file.dir + '/', '')
         vue.updateParam({ key: file.name, value: { value: result , display: fname} })
+        vue.updateParam({ key: file.filename, value: { value: fname } })
       })
       .catch(function (err) {
         vue.displayConnectionErrorMsg()
