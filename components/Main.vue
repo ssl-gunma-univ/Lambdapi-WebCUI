@@ -261,3 +261,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-textarea {
+  font-size: 12px;
+}
+.v-textarea textarea{
+  line-height: 20px;
+}
+</style>
