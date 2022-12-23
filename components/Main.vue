@@ -146,6 +146,7 @@
                     v-if="param.type === 'slider'"
                     :label="param.display"
                     :value="param.value"
+                    @change="(value) => updateParam({ key: key, value: { value: value } })"
                     :max="param.max"
                     :min="param.min"
                     hide-details
@@ -224,7 +225,7 @@ export default {
     consoleHeight: 0
   }),
   computed: {
-    ...mapState(['params', 'console', 'filename']), //filename
+    ...mapState(['params', 'console', 'filename']),
     ...mapGetters(['isFlag'])
   },
   watch: {
@@ -237,7 +238,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['updateParam', 'setFilename']), //setFilename
+    ...mapMutations(['updateParam', 'setFilename']),
     ...mapActions(['displayExceptionMsg']),
     fileChange(param, key, value) {
       const reader = new FileReader()
