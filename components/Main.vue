@@ -56,6 +56,7 @@
                     :disabled="param.hasOwnProperty('if') && !isFlag(param.if)"
                   ></v-text-field>
                   <v-textarea
+                    :class="{'monospace' : true }"
                     v-if="param.type === 'textarea'"
                     :label="param.display"
                     :value="param.value"
@@ -279,5 +280,8 @@ export default {
 }
 .v-textarea textarea{
   line-height: 20px;
+}
+.monospace {
+  font-family: monospace;
 }
 </style>
