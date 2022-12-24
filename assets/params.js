@@ -1,11 +1,14 @@
 export const params = {
+  help: { default: false },
+
   file:{
     display: 'File',
     type: 'file',
     target: 'filebody',
     default: [],
-    size: 4
+    size: 6
   },
+  
   fileextension: {
     display: 'file extension',
     type: 'select',
@@ -14,9 +17,9 @@ export const params = {
       { name: 'dk', display: 'dk' }
     ],
     default: { name: 'lp', display: 'lp' },
-    size: 4
+    size: 3
   },
-  //command
+  
   command: {
     display: 'Command',
     type: 'select',
@@ -29,13 +32,13 @@ export const params = {
       { name: 'version',   display: 'version' }
     ],
     default: { name: 'check', display: 'check' },
-    size: 4
+    size: 3
   },
+
   //common option
-  help:        { display: '--help',         type: 'check',  default: false,  size: 'half' },
-  version:     { display: '--version',      type: 'check',  default: false,  size: 'half' },
   recordtime:  { display: '--record-time',  type: 'check',  default: false,  size: 'half' },
   nowarnings:  { display: '--no-warnings',  type: 'check',  default: false,  size: 'half' },
+  
   //decision-tree option
   ghost:  { display: '--ghost', type: 'check',  default: false,  size: 'whole', if: 'tree' },
   
