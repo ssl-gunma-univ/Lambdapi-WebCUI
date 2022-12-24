@@ -55,9 +55,9 @@ export const config = {
         webcui.sendReq(
           (webcui) => {
             webcui.updateParam({ key: 'help', value: { value: true } })
+            webcui.clearConsole()
           },
           (webcui, result) => {
-            webcui.clearConsole()
             webcui.addLine({ html: result })
           })
       }
